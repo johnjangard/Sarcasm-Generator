@@ -1,7 +1,5 @@
 function generateText() {
 
-
-
   let element = document.getElementById('result');
 
   if (element !== null) {
@@ -30,19 +28,19 @@ inputArray.forEach(function(letter, index) {
   let results = outputArray.join('');
 console.log(results)
 
-let rezzy = document.getElementById('result');
+let domResult = document.getElementById('result');
 
 
 let resultHeader = document.createElement("h4");
 resultHeader.innerHTML = "Result";
 resultHeader.setAttribute('class', ' mt-4 text-decoration-underline');
-rezzy.appendChild(resultHeader);
+domResult.appendChild(resultHeader);
 
 
 let displayString = document.createElement("h1");
 displayString.innerHTML = results;
 // displayString.setAttribute('class', 'h1');
-rezzy.appendChild(displayString);
+domResult.appendChild(displayString);
 
 
 let createBtn = document.createElement("button");
@@ -51,10 +49,9 @@ createBtn.setAttribute('id', 'btnCopy');
 createBtn.setAttribute('class', 'btn btn-primary');
 createBtn.onclick = function()
 {
-  // let domValue = results;
   let tempInput = document.createElement("input");
   tempInput.type = "text";
-  // tempInput.value = domValue;
+
   tempInput.value = results;
   document.body.appendChild(tempInput);
   tempInput.select();
@@ -65,11 +62,11 @@ createBtn.onclick = function()
 let confirmCopy = document.createElement("p");
 confirmCopy.innerHTML = 'Text copied!';
 confirmCopy.setAttribute('class', 'btn btn-success');
-  rezzy.appendChild(confirmCopy);
+  domResult.appendChild(confirmCopy);
 createBtn.remove();
 
   console.log('Copied to clipboard!');
 }
-rezzy.appendChild(createBtn);
+domResult.appendChild(createBtn);
  
 }
